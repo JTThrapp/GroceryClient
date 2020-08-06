@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 import Auth from './components/Auth/Auth';
+import Items from './components/Items/Items'
 function App() {
 
   const [sessionToken, setSessionToken] = useState(undefined);
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Auth updateToken={updateToken}/>
+      <Items token= {sessionToken}/>
     </div>
   );
 }
