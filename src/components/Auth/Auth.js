@@ -44,8 +44,8 @@ const Auth = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const url = login ? 'http://localhost:3001/auth/signin' :
-        'http://localhost:3001/auth/signup'
+        const url = login ? 'http://localhost:3000/auth/signin' :
+        'http://localhost:3000/auth/signup'
 
         const bodyObj = login ? {
             email: email,
@@ -62,7 +62,6 @@ const Auth = (props) => {
             body: JSON.stringify(bodyObj),
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
             }
         })
         .then(res => res.json())
