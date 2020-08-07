@@ -23,6 +23,7 @@ const Items = (props) => {
     }, []);
 
     return (
+        <div id='displayedItems'>
         <table>
             <thead>
                 <tr>
@@ -35,6 +36,7 @@ const Items = (props) => {
                 <Item item={items}/>
             </tbody>
         </table>
+        </div>
     )
 
 }
