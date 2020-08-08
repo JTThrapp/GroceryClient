@@ -1,46 +1,55 @@
-import React from 'react';
-import './Recipe.css';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import React, {useEffect, useState} from 'react';
+import Recipe from './Recipe/Recipe';
+import './Recipes.css';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
-    const Recipe = ({title, calories, image, ingredients}) => {
-        
-        const classes = useStyles();
+const Recipes = () => {
+
+    const appId = "b039b354";
+    const appKey = "b5870411f65402898f8b6516bbf042eb";
+    const [recipes, setRecipes] = useState([]);
+    const [search, setSearch] = useState("");
+    const [query, setQuery] = useState('chicken');
+  
+    const exampleRequest = `https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${appKey}`;
+  
+    useEffect ( () => {
+      getRecipes();
+    }, [query]);
+  
+    const getRecipes = async () => {
+      const response = await fetch(exampleRequest);
+      const data = await response.json();
+      setRecipes(data.hits);
+      console.log(data.hits);
+    }
+  
+    const updateSearch = (event) => {
+      setSearch(event.target.value);
+    }
+  
+    const getSearch = event => {
+      event.preventDefault();
+      setQuery(search);
+      setSearch('');
+    }
+
   return (
-      <div>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt=""
-          height="200"
-          image={image}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography>Calories: {Math.round(calories)}</Typography>
-          {ingredients.map(ingredient => (
-            <Typography variant="body2" color="textSecondary" component="p">
-                <li>{ingredient.text}</li>
-            </Typography>
-                ))}
-        </CardContent>
-      </CardActionArea>
-    </Card>
-    <br/>
+    <div id="recipes">
+      <h3>Search Recipes</h3>
+      <form onSubmit={getSearch} className="search-form">
+      <input className="search-bar" type="text" value={search} onChange={updateSearch} />
+      <button className="search-button" type="submit">Search</button>
+    </form>
+    {recipes.map(recipe => (
+      <Recipe 
+      key={recipe.recipe.label} 
+      title={recipe.recipe.label} 
+      calories={recipe.recipe.calories} 
+      image={recipe.recipe.image}
+      ingredients={recipe.recipe.ingredients} />
+    ))}
     </div>
   );
 }
 
-export default Recipe;
+export default Recipes;

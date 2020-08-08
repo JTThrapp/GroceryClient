@@ -10,13 +10,13 @@ const OurNav = (props) => {
         <div>
         <Navbar>
         <Nav>
-                <NavLink href="#home"> Grocery App </NavLink>
+                <NavLink href="/"> Grocery App </NavLink>
     
                 <NavLink href="#contact">Contact</NavLink>
             
-                <NavLink href="#recipes">Recipes</NavLink>
+                <NavLink href="recipes">Recipes</NavLink>
             
-                <NavLink href="#mylist">My Lists</NavLink>
+                <NavLink href="myList">My Lists</NavLink>
 
                 <Logout clearToken={props.clearToken} />
                 
