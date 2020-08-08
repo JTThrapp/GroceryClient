@@ -1,0 +1,7 @@
+#recipes {
+  display: inline-block;
+}
+
+#recipes li {
+  text-align: left;
+}
