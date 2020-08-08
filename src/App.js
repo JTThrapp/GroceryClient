@@ -3,7 +3,7 @@ import './App.css';
 
 import Auth from './components/Auth/Auth';
 import Recipes from './components/Recipes/Recipes';
-import Items from './components/Items/items';
+import Items from './components/Items/Items';
 import OurNav from './components/Navbar/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -38,9 +38,9 @@ function App() {
         <OurNav clearToken={clearToken}/>
           {viewConductor()}
         <Switch>
-          {/* <Route path="/" exact component={Auth} /> */}
-          <Route path="/recipes" component={Recipes} />
-          <Route path="/myList" component={Items} />
+          {/* <Route path="/" exact component={Auth} updateToken={updateToken}/> */}
+          <Route path="/recipes" component={Recipes} token={sessionToken}/>
+          <Route path="/myList" component={Items} token={sessionToken}/>
         </Switch>
       </div>
     </Router>

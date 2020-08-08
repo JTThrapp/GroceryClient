@@ -2,13 +2,14 @@ import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe/Recipe';
 import './Recipes.css';
 
-const Recipes = () => {
+const Recipes = (props) => {
 
     const appId = "b039b354";
     const appKey = "b5870411f65402898f8b6516bbf042eb";
     const [recipes, setRecipes] = useState([]);
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState('chicken');
+    
   
     const recipeRequest = `https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${appKey}`;
   
@@ -40,6 +41,12 @@ const Recipes = () => {
       setQuery(search);
       setSearch('');
     }
+
+    // useEffect(
+    // setSessionToken(props.token))
+    
+    //add recipes from search to your list
+    
 
   return (
     <div id="recipes">
