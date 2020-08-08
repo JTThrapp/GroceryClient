@@ -15,8 +15,7 @@ function App() {
   const viewConductor = () => {
     return sessionToken !== undefined ?
       <Items token= {sessionToken}/>
-       :
-      <Auth updateToken={updateToken}/>
+      : <Auth updateToken={updateToken}/>
   }
 
   // const showHideLogin = () => {
@@ -39,7 +38,7 @@ function App() {
         <OurNav clearToken={clearToken}/>
           {viewConductor()}
         <Switch>
-          <Route path="/" exact component={Auth} />
+          {/* <Route path="/" exact component={Auth} /> */}
           <Route path="/recipes" component={Recipes} />
           <Route path="/myList" component={Items} />
         </Switch>

@@ -10,17 +10,25 @@ const Recipes = () => {
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState('chicken');
   
-    const exampleRequest = `https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${appKey}`;
+    const recipeRequest = `https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${appKey}`;
   
     useEffect ( () => {
       getRecipes();
     }, [query]);
   
     const getRecipes = async () => {
-      const response = await fetch(exampleRequest);
+      const response = await fetch(recipeRequest);
       const data = await response.json();
       setRecipes(data.hits);
       console.log(data.hits);
+
+      if (data.hits.length === 0) {
+        console.log("No results to display.");
+        let searchForm = document.getElementById('recipes');
+        let noResultsMessage = document.createTextNode('No results matching your search are available to display.');
+
+        searchForm.appendChild(noResultsMessage);
+      }
     }
   
     const updateSearch = (event) => {

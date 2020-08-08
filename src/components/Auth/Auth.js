@@ -3,6 +3,7 @@ import './Auth.css';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 
 const Auth = (props) => {
@@ -12,12 +13,6 @@ const Auth = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [login, setLogin] = useState(true);
-
-
-    //! If we want a title for the signup/login form
-    // const title = () => {
-    //     return login ? 'Login' : 'Signup'
-    // }
     
 
     const loginToggle = (event) => {
@@ -70,18 +65,27 @@ const Auth = (props) => {
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <ValidatorForm onSubmit={handleSubmit}>
                 <br/>
                 {signupFields()}
-                <TextField type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} label="Email" variant="filled" htmlFor="email" />
-                <br/>
+                <TextValidator
+                    label="Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    name="email"
+                    value={email}
+                    validators={['required', 'isEmail']}
+                    errorMessages={['This field is required', 'email is not valid']}
+                    variant="filled"
+                    autoComplete="off"
+                />
+
                 <TextField type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} label="Password" variant="filled" htmlFor="password" />
                 <br/>
                 <span>Login</span><Switch onChange={loginToggle} color="primary">{login ? 'Signup' : 'Login'}</Switch><span>Register</span>
                 <br/>
                 <Button variant="contained" id="submitButton" type="submit">Submit</Button>
 
-            </form>
+            </ValidatorForm>
         </div>
     )
 }
