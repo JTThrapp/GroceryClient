@@ -5,6 +5,7 @@ import Auth from './components/Auth/Auth';
 import Recipes from './components/Recipes/Recipes';
 import Items from './components/Items/Items';
 import OurNav from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -14,7 +15,12 @@ function App() {
 
   const viewConductor = () => {
     return sessionToken !== undefined ?
-      <Items token= {sessionToken}/>
+        <div>
+          <Sidebar token={sessionToken}/>
+          <Recipes />
+        </div>
+       
+      
       : <Auth updateToken={updateToken}/>
   }
 
@@ -32,20 +38,30 @@ function App() {
     setSessionToken(undefined);
   }
 
-  return (
-    <Router>
-      <div className="App">
-        <OurNav clearToken={clearToken}/>
-          {viewConductor()}
-        <Switch>
-          {/* <Route path="/" exact component={Auth} updateToken={updateToken}/> */}
-          <Route path="/recipes" component={Recipes} token={sessionToken}/>
-          <Route path="/myList" component={Items} token={sessionToken}/>
-        </Switch>
-      </div>
-    </Router>
+  return(
+    <div className="App">
+      <OurNav clearToken={clearToken}/>
+        {viewConductor()}
+    </div>
+  )
 
-  );
+
+  // return (
+  //   <Router>
+  //     <div className="App">
+  //       <OurNav clearToken={clearToken}/>
+  //         {viewConductor()}
+  //       <Switch>
+  //         <Route path="/" exact component={Auth} updateToken={updateToken}/>
+  //         <Route path="/recipes" component={Recipes} token={sessionToken}/>
+  //         <Route path="/myList" component={Items} token={sessionToken}/>
+  //       </Switch>
+  //     </div>
+  //   </Router>
+
+  // );
+
+
 }
 
 export default App;

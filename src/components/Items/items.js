@@ -5,8 +5,9 @@ import Item from './Item/Item'
 
 const Items = (props) => {
 
-    const [items, setItems] = useState([])
-
+    const [items, setItems] = useState([]);
+    const [newItem, setNewItem] = useState('');
+    const [newQuantity, setNewQuantity] = useState('');
   
 
     useEffect(() => {
@@ -22,6 +23,34 @@ const Items = (props) => {
         .then(err => console.log(err))
     }, []);
 
+    //add new items
+    const handleSubmit = (e) => {
+
+        console.log(newItem);
+        console.log(newQuantity);
+
+        const url = 'http://localhost:3000/item';
+
+        const bodyObj = {
+            nameOfItem: newItem,
+            quantity: newQuantity,
+            owner: 4,
+        }
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(bodyObj),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': props.token,
+                
+            }
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+        }
+
     return (
         <div id='displayedItems'>
         <table>
@@ -36,6 +65,12 @@ const Items = (props) => {
                 <Item item={items}/>
             </tbody>
         </table>
+
+        <form onSubmit={handleSubmit()}>
+            <input type='text' value={newItem} onSubmit={(e) => setNewItem(e.target.value)}></input>
+            <input type='number' value={newQuantity} onSubmit={(e) => setNewQuantity(e.target.value)}></input>
+            <button type='submit'></button>
+        </form>
         </div>
     )
 

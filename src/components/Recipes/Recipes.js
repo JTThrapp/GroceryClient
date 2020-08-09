@@ -42,10 +42,6 @@ const Recipes = (props) => {
       setSearch('');
     }
 
-    // useEffect(
-    // setSessionToken(props.token))
-    
-    //add recipes from search to your list
     
 
   return (
