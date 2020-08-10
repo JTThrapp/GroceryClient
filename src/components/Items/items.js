@@ -9,6 +9,7 @@ const Items = (props) => {
     const [newItem, setNewItem] = useState('');
     const [newQuantity, setNewQuantity] = useState('');
   
+    console.log('props: ', props);
 
     useEffect(() => {
         fetch('http://localhost:3000/item', {
@@ -23,11 +24,15 @@ const Items = (props) => {
         .then(err => console.log(err))
     }, []);
 
+    useEffect ( () => {
+        handleSubmit();
+      }, []);
+
+
     //add new items
     const handleSubmit = (e) => {
+        // e.preventDefault();
 
-        console.log(newItem);
-        console.log(newQuantity);
 
         const url = 'http://localhost:3000/item';
 
@@ -51,6 +56,15 @@ const Items = (props) => {
         .catch(err => console.log(err))
         }
 
+        const updateNewItem = (event) => {
+            setNewItem(event.target.value)
+        }
+
+        const updateNewQuantity = (event) => {
+            setNewQuantity(event.target.value)
+        }
+
+
     return (
         <div id='displayedItems'>
         <table>
@@ -66,10 +80,10 @@ const Items = (props) => {
             </tbody>
         </table>
 
-        <form onSubmit={handleSubmit()}>
-            <input type='text' value={newItem} onSubmit={(e) => setNewItem(e.target.value)}></input>
-            <input type='number' value={newQuantity} onSubmit={(e) => setNewQuantity(e.target.value)}></input>
-            <button type='submit'></button>
+        <form onSubmit={() => this.handleSubmit()} >
+            <input type='text' value={newItem} onChange={updateNewItem}></input>
+            <input type='number' value={newQuantity} onChange={updateNewQuantity}></input>
+            <button type='submit'>Add item</button>
         </form>
         </div>
     )

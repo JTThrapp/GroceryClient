@@ -42,6 +42,11 @@ function App() {
     <div className="App">
       <OurNav clearToken={clearToken}/>
         {viewConductor()}
+        <Router>
+          <Switch>
+          <Route path="/contact" component={Recipes}></Route>
+          </Switch>
+        </Router>
     </div>
   )
 

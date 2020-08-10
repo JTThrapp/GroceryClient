@@ -12,7 +12,7 @@ const OurNav = (props) => {
         <Nav>
                 <NavLink href="/"> Grocery App </NavLink>
     
-                <NavLink href="#contact">Contact</NavLink>
+                <NavLink href="contact">Contact</NavLink>
             
                 <NavLink href="recipes">Recipes</NavLink>
             
