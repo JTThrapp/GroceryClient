@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import './Items.css';
-
+import Table from '@material-ui/core/Table';
 import Item from './Item/Item'
+import ItemAdd from './ItemMethods/ItemAdd';
+import ItemEdit from './ItemMethods/ItemEdit';
+
 
 const Items = (props) => {
 
@@ -9,8 +12,14 @@ const Items = (props) => {
     const [newItem, setNewItem] = useState('');
     const [newQuantity, setNewQuantity] = useState('');
   
+    // console.log('items: ', props.token);
 
     useEffect(() => {
+        getAllItems()
+    }, []);
+
+
+    const getAllItems = () => {
         fetch('http://localhost:3000/item', {
             method: 'GET',
             headers: {
@@ -20,57 +29,75 @@ const Items = (props) => {
         })
         .then(res => res.json())
         .then(json => setItems(json))
-        .then(err => console.log(err))
-    }, []);
-
-    //add new items
-    const handleSubmit = (e) => {
-
-        console.log(newItem);
-        console.log(newQuantity);
-
-        const url = 'http://localhost:3000/item';
-
-        const bodyObj = {
-            nameOfItem: newItem,
-            quantity: newQuantity,
-            owner: 4,
-        }
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(bodyObj),
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': props.token,
-                
-            }
-        })
-        .then(res => res.json())
-        .then(res => console.log(res))
         .catch(err => console.log(err))
-        }
+    }
+    // useEffect ( () => {
+    //     handleSubmit();
+    //   }, []);
+
+
+
+        // const editItem = event => {
+        //     event.preventDefault();
+            
+        //     setNewItem(''); //clears item input 
+        //     setNewQuantity(1); //clears qty input
+            
+        //     fetch('http://localhost:3000/item/:id', {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Authorization': props.token
+        //     }
+        // })
+        // .then(res => res.json())
+        // .then(json => setItems(json))
+        // .catch(err => console.log(err))
+        // }
+
+        // const deleteItem = event => {
+        //     event.preventDefault();
+        //     postToDatabase(); //fires POST fetch
+        //     // setItems(items + {newItem, newQuantity})
+        //     setNewItem(''); //clears item input 
+        //     setNewQuantity(1); //clears qty input
+            
+        //     fetch('http://localhost:3000/item', {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Authorization': props.token
+        //     }
+        // })
+        // .then(res => res.json())
+        // .then(json => setItems(json))
+        // .catch(err => console.log(err))
+        // }
+
+
 
     return (
-        <div id='displayedItems'>
-        <table>
+        <div >
+        <Table solid size='small'>
             <thead>
                 <tr>
                     <th>Name of Item</th>
                     <th>Quantity</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 {/* Item data will go here */}
-                <Item item={items}/>
+                <Item token={props.token} item={items}/>
             </tbody>
-        </table>
+        </Table>
 
-        <form onSubmit={handleSubmit()}>
-            <input type='text' value={newItem} onSubmit={(e) => setNewItem(e.target.value)}></input>
-            <input type='number' value={newQuantity} onSubmit={(e) => setNewQuantity(e.target.value)}></input>
-            <button type='submit'></button>
-        </form>
+       
+            <ItemAdd item={items} token={props.token}/>
+            <ItemEdit item={items} token={props.token} /> 
+            {/* <ItemDelete />  */}
+
+        
         </div>
     )
 

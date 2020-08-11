@@ -15,7 +15,8 @@ const styles = theme => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    margin: '25%'
+    margin: '25%',
+    
   },
   drawerPaper: {
     width: drawerWidth,
@@ -25,17 +26,17 @@ const styles = theme => ({
 function Sidebar(props) {
   // const { classes } = props;
 
-  const [sessionToken, setSessionToken] = useState(props.token);
-  console.log(sessionToken)
+  // const [sessionToken, setSessionToken] = useState(props.token);
+  console.log(props)
 
   return (
-    <div >
+    <div id='displayedItems'>
       <Drawer
         variant="permanent"
         anchor="left">
-        <div  />
+          <h3>My Grocery List</h3>
         <List>
-          <Items token = {sessionToken} />
+          <Items token = {props.token} />
         </List>
       </Drawer>
     </div>

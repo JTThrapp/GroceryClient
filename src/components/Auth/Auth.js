@@ -6,6 +6,9 @@ import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Contact from '../Contact/Contact';
+
 const Auth = (props) => {
 
     const [firstName, setFirstName] = useState('');
@@ -63,6 +66,7 @@ const Auth = (props) => {
         .then(json => props.updateToken(json.sessionToken))
     }
 
+
     return(
         <div>
             <ValidatorForm onSubmit={handleSubmit}>
@@ -86,6 +90,7 @@ const Auth = (props) => {
                 <Button variant="contained" id="submitButton" type="submit">Submit</Button>
 
             </ValidatorForm>
+           
         </div>
     )
 }

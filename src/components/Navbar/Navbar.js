@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import Logout from './Logout/Logout'
-import { Nav, NavItem, NavLink, Navbar } from 'reactstrap';
+import { Nav, NavLink, Navbar } from 'reactstrap';
 
 
 const OurNav = (props) => {
@@ -10,13 +10,9 @@ const OurNav = (props) => {
         <div>
         <Navbar>
         <Nav>
-                <NavLink href="/"> Grocery App </NavLink>
+                <NavLink > Grocery App </NavLink>
     
-                <NavLink href="#contact">Contact</NavLink>
-            
-                <NavLink href="recipes">Recipes</NavLink>
-            
-                <NavLink href="myList">My Lists</NavLink>
+                <NavLink href="/contact">Contact</NavLink>
 
                 <Logout clearToken={props.clearToken} />
                 
