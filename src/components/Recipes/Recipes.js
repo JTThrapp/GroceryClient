@@ -21,7 +21,7 @@ const Recipes = (props) => {
       const response = await fetch(recipeRequest);
       const data = await response.json();
       setRecipes(data.hits);
-      console.log(data.hits);
+      // console.log(data.hits);
 
       if (data.hits.length === 0) {
         console.log("No results to display.");

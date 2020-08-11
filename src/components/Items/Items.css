@@ -1,9 +1,13 @@
-#displayedItems{
+/* #displayedItems{
     
     
-}
+} */
 
 table{
     background-color: #cfdfda;
     
+}
+
+button{
+    margin-right: 5px
 }

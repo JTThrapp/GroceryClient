@@ -15,7 +15,8 @@ const styles = theme => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    margin: '25%'
+    margin: '25%',
+    
   },
   drawerPaper: {
     width: drawerWidth,
@@ -29,7 +30,7 @@ function Sidebar(props) {
   console.log(props)
 
   return (
-    <div >
+    <div id='displayedItems'>
       <Drawer
         variant="permanent"
         anchor="left">
