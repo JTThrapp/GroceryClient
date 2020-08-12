@@ -10,7 +10,11 @@ const ItemEdit = (props) => {
   const updateItem = async e => {
     e.preventDefault();
     try {
-      const body = { "nameOfItem": items };
+      const body = { 
+        "nameOfItem": items,
+        "quantity": quantity 
+      };
+      
       const response = await fetch(
         `http://localhost:3000/item/${props.item.id}`,
         {
@@ -69,7 +73,7 @@ const ItemEdit = (props) => {
               <input
                 type="number"
                 className="form-control"
-                value={props.item.quantity}
+                value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
               />
             </div>
