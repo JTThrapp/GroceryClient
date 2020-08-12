@@ -1,11 +1,13 @@
 
 
-bio {
-
+form {
+    position: relative;
+    top: -25em;
+    align-self: center;
 }
 
 #food {
-    opacity: 0.7;
+    opacity: 0.3;
     background-repeat: no-repeat;
 }
 

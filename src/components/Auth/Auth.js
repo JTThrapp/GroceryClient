@@ -4,7 +4,7 @@ import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import food from 'C:/Users/caris/Documents/GitHub/GroceryClient/src/assets/food.jpg'
+import food from '../../assets/food.jpg'
 
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
