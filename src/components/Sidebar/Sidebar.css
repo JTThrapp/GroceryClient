@@ -1,3 +1,8 @@
 .MuiPaper-root{
     margin-top: 11%;
+    margin-bottom: 10%;
+}
+
+#displayedItems > div > div {
+    background-color: #cfdfda;
 }

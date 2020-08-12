@@ -18,7 +18,7 @@ const Recipe = ({ title, calories, image, ingredients }) => {
   
   const addRecipeToList = (e) => {
 
-    console.log(title)
+    // console.log(title)
 
     // const url = login ? 'http://localhost:3000/item' :
     //   null;
