@@ -6,6 +6,8 @@ import Recipes from './components/Recipes/Recipes';
 import OurNav from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+
 
 
 function App() {
@@ -21,19 +23,18 @@ function App() {
 
   const viewConductor = () => {
     return sessionToken !== undefined ?
-    // return sessionToken !== undefined ?
+  
         <div>
           <Sidebar token={sessionToken}/>
           <Recipes />
+          <Footer />
         </div>
        
       
       : <Auth updateToken={updateToken}/>
   }
 
-  // const showHideLogin = () => {
-  //   return sessionToken !== undefined ? <Auth updateToken={updateToken}/> : null
-  // }
+
 
   const updateToken = newToken => {
     localStorage.setItem('token', newToken);
@@ -45,14 +46,7 @@ function App() {
     setSessionToken(undefined);
   }
 
-  // const MyContactPage = (props) => {
-  //   return (
-  //     <Contact 
-  //       sessionToken={this.sessionToken.bind(this)}
-  //       {...props}
-  //     />
-  //   );
-  // }
+
 
   return(
     <div className="App">
