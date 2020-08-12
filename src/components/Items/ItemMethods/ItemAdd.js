@@ -4,25 +4,10 @@ import {useState} from 'react';
 
 
 const ItemAdd = (props) => {
-    const [items, setItems] = useState([]);
     const [newItem, setNewItem] = useState('');
     const [newQuantity, setNewQuantity] = useState('');
 
     console.log(props);
-
-    // Item Add
-    const getAllItems = () => {
-        fetch('http://localhost:3000/item', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            }
-        })
-        .then(res => res.json())
-        .then(json => setItems(json))
-        .catch(err => console.log(err))
-    }
 
     //add new items
     const postToDatabase = (e) => {
@@ -63,19 +48,19 @@ const ItemAdd = (props) => {
             postToDatabase();
             setNewItem(''); //clears item input 
             setNewQuantity(1); //clears qty input
-            getAllItems()
+            props.getAll();
         }
 
 
 return(
     <div>
          <form  >
-            <p>Add/Edit/Delete Items</p>
-            <input type='text' value={newItem} onChange={updateNewItem}></input>
-            <input type='number' value={newQuantity} onChange={updateNewQuantity}></input>
+            <p>Add an Item</p>
+            <input type='text' placeholder="Item Name" value={newItem} onChange={updateNewItem}></input>
+            <input type='number' placeholder="Quantity" value={newQuantity} onChange={updateNewQuantity}></input>
+            <button onClick={enterNewItem}><AddIcon/></button>
             <hr/>
         </form>
-        <button onClick={enterNewItem}><AddIcon/></button>
     </div>
 )}
 
