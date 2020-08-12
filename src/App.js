@@ -5,8 +5,8 @@ import Auth from './components/Auth/Auth';
 import Recipes from './components/Recipes/Recipes';
 import OurNav from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 

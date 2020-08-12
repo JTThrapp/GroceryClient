@@ -2,10 +2,11 @@
   /* Style the links inside the navigation bar */
   .navbar {
     background-color: #173042;
-    overflow: hidden;
     text-align: center;
+    overflow: hidden;
     padding: 1% 16px;
     font-size: 17px;
+    
   }
 
   .nav-link {

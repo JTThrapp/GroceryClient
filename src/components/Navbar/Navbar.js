@@ -2,7 +2,6 @@ import React from 'react';
 import './Navbar.css';
 import Logout from './Logout/Logout';
 import { Nav, NavLink, Navbar } from 'reactstrap';
-import Icon from 'C:/Users/caris/Documents/GitHub/GroceryClient/src/assets/groceryIcon.png'
 
 
 const OurNav = (props) => {
