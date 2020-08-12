@@ -70,12 +70,12 @@ const ItemAdd = (props) => {
 return(
     <div>
          <form  >
-            <p>Add/Edit/Delete Items</p>
-            <input type='text' value={newItem} onChange={updateNewItem}></input>
-            <input type='number' value={newQuantity} onChange={updateNewQuantity}></input>
+            <p>Add an Item</p>
+            <input type='text' placeholder="Item Name" value={newItem} onChange={updateNewItem}></input>
+            <input type='number' placeholder="Quantity" value={newQuantity} onChange={updateNewQuantity}></input>
+            <button onClick={enterNewItem}><AddIcon/></button>
             <hr/>
         </form>
-        <button onClick={enterNewItem}><AddIcon/></button>
     </div>
 )}
 
