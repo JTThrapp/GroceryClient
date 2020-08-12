@@ -1,6 +1,6 @@
 
 
-form {
+#loginForm {
     position: relative;
     top: -25em;
     align-self: center;
@@ -15,5 +15,4 @@ form {
     background-color: #7cad3e;
 }
 
-.home {
-}
+

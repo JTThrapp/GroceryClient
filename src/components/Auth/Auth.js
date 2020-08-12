@@ -74,7 +74,7 @@ import Contact from '../Contact/Contact';
             <bio>
                 <img id="food" src={food} alt="food" />
 
-                <ValidatorForm onSubmit={handleSubmit}>
+                <ValidatorForm id = "loginForm" onSubmit={handleSubmit}>
                     <br/>
                     {signupFields()}
                     <TextValidator
