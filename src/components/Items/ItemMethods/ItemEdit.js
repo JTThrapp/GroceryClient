@@ -1,30 +1,38 @@
 import React, { useState } from "react";
 
-const ItemEdit = ( props ) => {
-  const [itemName, setItemName] = useState(props.item.nameOfItem);
+const ItemEdit = (props) => {
+  const [items, setItem] = useState(props.item.nameOfItem);
   const [quantity, setQuantity] = useState(props.item.quantity);
 
-  console.log(props);
+  console.log(props.item.nameOfItem)
 
-  const updateItemName = async e => {
+
+  const updateItem = async e => {
     e.preventDefault();
     try {
-      const body = { itemName };
+      const body = { 
+        "nameOfItem": items,
+        "quantity": quantity 
+      };
+      
       const response = await fetch(
         `http://localhost:3000/item/${props.item.id}`,
         {
-            method: "PUT",
-            headers: { 
-                'Content-Type': "application/json",
-                'Authorization':  props.token },
-            body: JSON.stringify(body)
+          method: "PUT",
+          headers: { 
+            "Content-Type": "application/json",
+            "Authorization": props.token 
+          },
+          body: JSON.stringify(body)
         }
       );
-    //   window.location = "/";
+      console.log(response);
+      //window.location = "/";
     } catch (err) {
       console.error(err.message);
     }
   };
+
   return (
     <div>
       <button
@@ -35,41 +43,47 @@ const ItemEdit = ( props ) => {
       >
         Edit
       </button>
-      {/* 
-        id = id10
-      */}
       <div
         class="modal"
         id={`id${props.item.id}`}
-        onClick={() => setItemName(props.item.nameOfItem)}
+        onClick={() => setItem(items)}
       >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Edit Todo</h4>
+              <h4 class="modal-title">Edit Item</h4>
               <button
                 type="button"
                 class="close"
                 data-dismiss="modal"
-                onClick={() => setItemName(props.item.nameOfItem)}
+                onClick={() => setItem(items)}
               >
                 &times;
               </button>
             </div>
+
             <div class="modal-body">
               <input
                 type="text"
                 className="form-control"
-                value={itemName}
-                onChange={e => setItemName(e.target.value)}
+                value={items}
+                onChange={(e) => setItem(e.target.value)}
+              />
+
+              <input
+                type="number"
+                className="form-control"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
               />
             </div>
+
             <div class="modal-footer">
               <button
                 type="button"
                 class="btn btn-warning"
                 data-dismiss="modal"
-                onClick={e => updateItemName(e)}
+                onClick={(e) => updateItem(e)}
               >
                 Edit
               </button>
@@ -77,7 +91,7 @@ const ItemEdit = ( props ) => {
                 type="button"
                 class="btn btn-danger"
                 data-dismiss="modal"
-                onClick={() => updateItemName(props.item.nameOfItem)}
+                onClick={() => setItem(items)}
               >
                 Close
               </button>
