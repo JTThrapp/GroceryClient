@@ -1,0 +1,290 @@
+.facebook-flat{
+	height: 50px;
+	width: 50px;
+	color:#fff;
+	background: #133783;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+.facebook-flat:hover,
+.facebook-flat:focus,
+.facebook-flat:active,
+.facebook-flat.active,
+.facebook-flat.disabled,
+.facebook-flat[disabled] {
+  	color: #ffffff;
+  	background-color: #133783;
+  	*background-color: #102e6d;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+/* twitter */
+.twitter-flat{
+	height: 50px;
+	width: 50px;
+	color:#fff;
+	background: #00aced;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.twitter-flat:hover,
+.twitter-flat:focus,
+.twitter-flat:active,
+.twitter-flat.active,
+.twitter-flat.disabled,
+.twitter-flat[disabled] {
+  	color: #ffffff;
+  	background-color: #00aced;
+  	*background-color: #00aced;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+/* google+ */
+.google-flat{
+	height: 50px;
+	width: 50px;
+	color: #fff;
+	background:  #dd4b39;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.google-flat:hover,
+.google-flat:focus,
+.google-flat:active,
+.google-flat.active,
+.google-flat.disabled,
+.google-flat[disabled] {
+  	color: #fff;
+  	background-color:  #dd4b39;
+  	*background-color:  #dd4b39;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+/* linkedin */
+.linkedin-flat{
+	height: 50px;
+	width: 50px;
+	color: #fff;
+	background: #007bb6;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.linkedin-flat:hover,
+.linkedin-flat:focus,
+.linkedin-flat:active,
+.linkedin-flat.active,
+.linkedin-flat.disabled,
+.linkedin-flat[disabled] {
+  	color: #fff;
+  	background-color: #007bb6;
+  	*background-color: #007bb6;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+/* github */
+.github-flat{
+	height: 50px;
+	width: 50px;
+	color: black;
+	background: #e6e6e6;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.github-flat:hover,
+.github-flat:focus,
+.github-flat:active,
+.github-flat.active,
+.github-flat.disabled,
+.github-flat[disabled] {
+  	color: black;
+  	background-color: #e6e6e6;
+  	*background-color: #e6e6e6;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+/* Pinterest */
+.pinterest-flat{
+	height: 50px;
+	width: 50px;
+	color: #fff;
+	background: #cb2027;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.pinterest-flat:hover,
+.pinterest-flat:focus,
+.pinterest-flat:active,
+.pinterest-flat.active,
+.pinterest-flat.disabled,
+.pinterest-flat[disabled] {
+  	color: #fff;
+  	background-color: #cb2027;
+  	*background-color: #cb2027;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+/* dropbox */
+.dropbox-flat{
+	height: 50px;
+	width: 50px;
+	color: #fff;
+	background: #2e95e0;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.dropbox-flat:hover,
+.dropbox-flat:focus,
+.dropbox-flat:active,
+.dropbox-flat.active,
+.dropbox-flat.disabled,
+.dropbox-flat[disabled] {
+  	color: #fff;
+  	background-color: #2e95e0;
+  	*background-color: #2e95e0;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+/* Flickr */
+.flickr-flat{
+	height: 50px;
+	width: 50px;
+	color: #fff;
+	background: #ff0084;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.flickr-flat:hover,
+.flickr-flat:focus,
+.flickr-flat:active,
+.flickr-flat.active,
+.flickr-flat.disabled,
+.flickr-flat[disabled] {
+  	color: #fff;
+  	background-color: #ff0084;
+  	*background-color: #ff0084;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+/* Youtube */
+.youtube-flat{
+	height: 50px;
+	width: 50px;
+	color: #fff;
+	background: #bb0000;
+	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}
+
+.youtube-flat:hover,
+.youtube-flat:focus,
+.youtube-flat:active,
+.youtube-flat.active,
+.youtube-flat.disabled,
+.youtube-flat[disabled] {
+  	color: #fff;
+  	background-color: #bb0000;
+  	*background-color: #bb0000;
+  	border: none;
+
+  	border-radius:(0) !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+}

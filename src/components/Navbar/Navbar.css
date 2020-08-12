@@ -6,12 +6,14 @@
     text-align: center;
     padding: 1% 16px;
     font-size: 17px;
+    color: #cfdfda
   }
 
   .nav-link {
     text-decoration: none;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 25px;
     color: #cfdfda;
   }
   
@@ -19,3 +21,7 @@
   .navbar a:hover {
     background-color: #236477;
   } 
+
+  #Icon {
+    height: 30px;
+  }

@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Items from '../Items/Items';
+import Items from '../Items/items'
 import './Sidebar.css'
 
 const drawerWidth = '25%';

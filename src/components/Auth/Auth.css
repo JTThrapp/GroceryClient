@@ -1,0 +1,19 @@
+
+
+form {
+    position: relative;
+    top: -25em;
+    align-self: center;
+}
+
+#food {
+    opacity: 0.3;
+    background-repeat: no-repeat;
+}
+
+#submitButton {
+    background-color: #7cad3e;
+}
+
+.home {
+}
