@@ -5,7 +5,7 @@ switch (window.location.hostname){
         APIURL = 'http://localhost:3000'
         break;
 
-    case 'grocery-client.herokuapp.com';
+    case 'grocery-client.herokuapp.com':
         APIURL = 'https://jtsc-blue-deploy-server.herokuapp.com'
 }
 
