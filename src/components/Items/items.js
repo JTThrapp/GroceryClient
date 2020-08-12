@@ -4,6 +4,7 @@ import Table from '@material-ui/core/Table';
 import Item from './Item/Item'
 import ItemAdd from './ItemMethods/ItemAdd';
 
+import APIURL from '../../helpers/environment';
 
 
 const Items = (props) => {
@@ -18,7 +19,7 @@ const Items = (props) => {
 
 
     const getAllItems = () => {
-        fetch('http://localhost:3000/item', {
+        fetch(`${APIURL}/item`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

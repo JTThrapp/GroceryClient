@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import DeleteForever from "@material-ui/icons/DeleteForever";
 import "./Item.css";
 import ItemEdit from "../ItemMethods/ItemEdit";
+import APIURL from '../../../helpers/environment';
 
 const Item = (props) => {
   console.log("Item:", props);
@@ -11,7 +12,7 @@ const Item = (props) => {
 
   const deleteItem = async (id) => {
     try {
-      const deleteItem = await fetch(`http://localhost:3000/item/${id}`, {
+      const deleteItem = await fetch(`${APIURL}/item/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +30,7 @@ const Item = (props) => {
 
   const getItems = async () => {
     try {
-      const response = await fetch("http://localhost:3000/item", {
+      const response = await fetch(`${APIURL}/item`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

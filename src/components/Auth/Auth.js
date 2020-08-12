@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import food from '../../assets/food.jpg'
+import APIURL from '../../helpers/environment'
 
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -43,8 +44,8 @@ import Contact from '../Contact/Contact';
         const handleSubmit = (e) => {
             e.preventDefault();
 
-            const url = login ? 'http://localhost:3000/auth/signin' :
-            'http://localhost:3000/auth/signup'
+            const url = login ? `${APIURL}/auth/signin` :
+            `${APIURL}/auth/signup`
 
             const bodyObj = login ? {
                 email: email,

@@ -3,6 +3,7 @@ import AddIcon from '@material-ui/icons/Add';
 import {useState} from 'react';
 import { Button } from 'reactstrap';
 
+import APIURL from '../../../helpers/environment';
 
 const ItemAdd = (props) => {
     const [newItem, setNewItem] = useState('');
@@ -14,7 +15,7 @@ const ItemAdd = (props) => {
     const postToDatabase = (e) => {
         // e.preventDefault();
 
-        const url = 'http://localhost:3000/item';
+        const url = `${APIURL}/item`;
 
         const bodyObj = {
             nameOfItem: newItem,

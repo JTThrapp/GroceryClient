@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import APIURL from '../../../helpers/environment';
+
 const ItemEdit = (props) => {
   const [items, setItem] = useState(props.item.nameOfItem);
   const [quantity, setQuantity] = useState(props.item.quantity);
@@ -16,7 +18,7 @@ const ItemEdit = (props) => {
       };
       
       const response = await fetch(
-        `http://localhost:3000/item/${props.item.id}`,
+        `${APIURL}/item/${props.item.id}`,
         {
           method: "PUT",
           headers: { 
