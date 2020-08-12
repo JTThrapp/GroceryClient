@@ -1,7 +1,9 @@
 
 
-bio {
-
+form {
+    position: relative;
+    top: -25em;
+    align-self: center;
 }
 
 #food {
