@@ -54,7 +54,7 @@ function App() {
         {viewConductor()}
         <Router>
           <Switch>
-          <Route path="/contact" ></Route>
+          <Route path="/contact" component={Contact}></Route>
           {/* <Route path="/contact" render={MyContactPage}></Route> */}
           </Switch>
         </Router>
