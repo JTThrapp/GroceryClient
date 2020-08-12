@@ -48,7 +48,7 @@ const Items = (props) => {
         </Table>
 
        
-            <ItemAdd item={items} token={props.token}/>
+            <ItemAdd getAll={getAllItems} item={items} token={props.token}/>
 
         
         </div>

@@ -4,25 +4,10 @@ import {useState} from 'react';
 
 
 const ItemAdd = (props) => {
-    const [items, setItems] = useState([]);
     const [newItem, setNewItem] = useState('');
     const [newQuantity, setNewQuantity] = useState('');
 
     console.log(props);
-
-    // Item Add
-    const getAllItems = () => {
-        fetch('http://localhost:3000/item', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            }
-        })
-        .then(res => res.json())
-        .then(json => setItems(json))
-        .catch(err => console.log(err))
-    }
 
     //add new items
     const postToDatabase = (e) => {
@@ -63,7 +48,7 @@ const ItemAdd = (props) => {
             postToDatabase();
             setNewItem(''); //clears item input 
             setNewQuantity(1); //clears qty input
-            getAllItems()
+            props.getAll();
         }
 
 

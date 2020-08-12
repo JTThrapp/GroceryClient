@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 
-const ItemEdit = ({item}) => {
-  const [items, setItem] = useState(item.nameOfItem);
-  // const [quantity, setQuantity] = useState(item.quantity);
+const ItemEdit = (props) => {
+  const [items, setItem] = useState(props.item.nameOfItem);
+  const [quantity, setQuantity] = useState(props.item.quantity);
 
-  console.log(localStorage.getItem('token').toString());
+  console.log(props.item.nameOfItem)
+
 
   const updateItem = async e => {
     e.preventDefault();
     try {
-      const body = { items };
+      const body = { "nameOfItem": items };
       const response = await fetch(
-        `http://localhost:3000/item/${item.id}`,
+        `http://localhost:3000/item/${props.item.id}`,
         {
           method: "PUT",
           headers: { 
             "Content-Type": "application/json",
-            "Authorization": localStorage.getItem('token').toString() },
+            "Authorization": props.token 
+          },
           body: JSON.stringify(body)
         }
       );
@@ -33,13 +35,13 @@ const ItemEdit = ({item}) => {
         type="button"
         class="btn btn-warning"
         data-toggle="modal"
-        data-target={`#id${item.id}`}
+        data-target={`#id${props.item.id}`}
       >
         Edit
       </button>
       <div
         class="modal"
-        id={`id${item.id}`}
+        id={`id${props.item.id}`}
         onClick={() => setItem(items)}
       >
         <div class="modal-dialog">
@@ -64,12 +66,12 @@ const ItemEdit = ({item}) => {
                 onChange={(e) => setItem(e.target.value)}
               />
 
-              {/* <input
+              <input
                 type="number"
                 className="form-control"
-                value={item.quantity}
-                // onChange={(e) => setQuantity(e.target.value)}
-              /> */}
+                value={props.item.quantity}
+                onChange={(e) => setQuantity(e.target.value)}
+              />
             </div>
 
             <div class="modal-footer">
