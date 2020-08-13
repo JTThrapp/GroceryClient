@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe/Recipe';
 import './Recipes.css';
+import TextField from '@material-ui/core/TextField';
+import SearchIcon from '@material-ui/icons/Search';
 
 const Recipes = (props) => {
 
@@ -48,8 +50,8 @@ const Recipes = (props) => {
     <div id="recipes">
       <h3>Search Recipes</h3>
       <form onSubmit={getSearch} className="search-form">
-      <input className="search-bar" type="text" value={search} onChange={updateSearch} />
-      <button className="search-button" type="submit">Search</button>
+      <TextField label="What's cookin' good lookin?" id="standard-basic" className="search-bar" type="text" value={search} onChange={updateSearch} />
+      <button className="search-button" type="submit"><SearchIcon/></button>
     </form>
     {recipes.map(recipe => (
       <Recipe 

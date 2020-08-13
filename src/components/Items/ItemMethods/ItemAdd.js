@@ -2,6 +2,7 @@ import React from 'react';
 import AddIcon from '@material-ui/icons/Add';
 import {useState} from 'react';
 import { Button } from 'reactstrap';
+import TextField from '@material-ui/core/TextField';
 
 import APIURL from '../../../helpers/environment';
 
@@ -62,8 +63,8 @@ return(
         <br/>
          <form  >
             <p className="addItemHeader"><b>Add an Item</b></p>
-            <input type='text' placeholder="Item Name" value={newItem} onChange={updateNewItem}></input>
-            <input type='number' placeholder="Quantity" value={newQuantity} onChange={updateNewQuantity}></input>
+            <TextField id="standard-basic" label="item" type='text' value={newItem} onChange={updateNewItem}/>
+            <TextField className="quantityInput" id="standard-basic" label="quantity" type='number' value={newQuantity} onChange={updateNewQuantity}/>
             <button onClick={enterNewItem}><AddIcon/></button>
             <hr/>
         </form>
