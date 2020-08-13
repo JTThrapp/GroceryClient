@@ -46,6 +46,7 @@ const ItemAdd = (props) => {
         const enterNewItem = event => {
             event.preventDefault();
             postToDatabase();
+            window.location = "/";
             setNewItem(''); //clears item input 
             setNewQuantity(1); //clears qty input
             props.getAll();

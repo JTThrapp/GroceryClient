@@ -10,7 +10,7 @@ const OurNav = (props) => {
         <div>
         <Navbar>
         <Nav>
-                <NavLink > Grocery App </NavLink>
+                <NavLink href="/"> Grocery App </NavLink>
     
                 <NavLink href="/contact">Contact</NavLink>
 

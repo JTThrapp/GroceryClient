@@ -10,30 +10,37 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
 
-  const [sessionToken, setSessionToken] = useState(undefined);
+  let ls = localStorage.getItem('token');
+  
+  if (ls !== null ) {
+    ls = localStorage.getItem('token').toString();
+  }
+  const [sessionToken, setSessionToken] = useState(ls);
+  
+  sessionToken === null ? console.log('No user signed in.') : console.log(`Your session token is: ${sessionToken}`) ;
   
   
-  sessionToken === undefined ? console.log('No user signed in.') : console.log(`Your session token is: ${sessionToken}`) ;
-
   console.log(`local storage: ${localStorage.getItem('token')}`)
+  console.log(ls);
 
-  let ls = localStorage.getItem('token')
 
-  const viewConductor = () => {
-    return sessionToken !== undefined ?
-    // return sessionToken !== undefined ?
-        <div>
-          <Sidebar token={sessionToken}/>
-          <Recipes />
+  const displayLogin = () => {
+    return ls !== null ?
+        <div>          
         </div>
        
       
       : <Auth updateToken={updateToken}/>
   }
+  const displayRecipes = () => {
+    return ls !== null ?
+        <div>
+          <Sidebar token={sessionToken}/>
+          <Recipes />          
+        </div>
 
-  // const showHideLogin = () => {
-  //   return sessionToken !== undefined ? <Auth updateToken={updateToken}/> : null
-  // }
+      : null;
+  }
 
   const updateToken = newToken => {
     localStorage.setItem('token', newToken);
@@ -45,23 +52,14 @@ function App() {
     setSessionToken(undefined);
   }
 
-  // const MyContactPage = (props) => {
-  //   return (
-  //     <Contact 
-  //       sessionToken={this.sessionToken.bind(this)}
-  //       {...props}
-  //     />
-  //   );
-  // }
-
   return(
     <div className="App">
       <OurNav token={sessionToken} clearToken={clearToken}/>
-        {viewConductor()}
+        {displayLogin()}
         <Router>
           <Switch>
-          <Route path="/contact" ></Route>
-          {/* <Route path="/contact" render={MyContactPage}></Route> */}
+          <Route path="/contact" component={Contact}></Route>
+          <Route path="/">{displayRecipes}</Route>
           </Switch>
         </Router>
     </div>

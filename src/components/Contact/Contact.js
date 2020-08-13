@@ -5,7 +5,7 @@ const Contact = (props) => {
     console.log(props)
 
     return (
-        <div>
+        <div id="contactForm">
         <hr/>
             <h2>Contact Us</h2>
           <p class="lead">Thanks for visiting our page! Feel free to leave 

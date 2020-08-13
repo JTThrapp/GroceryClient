@@ -69,7 +69,7 @@ const Auth = (props) => {
 
     return(
         <div>
-            <ValidatorForm onSubmit={handleSubmit}>
+            <ValidatorForm id="loginForm" onSubmit={handleSubmit}>
                 <br/>
                 {signupFields()}
                 <TextValidator
