@@ -6,3 +6,7 @@
 #recipes li {
   text-align: left;
 }
+
+.search-button {
+  height: 56px
+}
