@@ -57,8 +57,11 @@ const ItemAdd = (props) => {
 
 return(
     <div>
+        <br/>
+        <hr/>
+        <br/>
          <form  >
-            <p>Add an Item</p>
+            <p className="addItemHeader"><b>Add an Item</b></p>
             <input type='text' placeholder="Item Name" value={newItem} onChange={updateNewItem}></input>
             <input type='number' placeholder="Quantity" value={newQuantity} onChange={updateNewQuantity}></input>
             <button onClick={enterNewItem}><AddIcon/></button>
