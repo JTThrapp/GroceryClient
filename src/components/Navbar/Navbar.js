@@ -12,7 +12,7 @@ const OurNav = (props) => {
         <Navbar>
         <Nav>
 
-                <NavLink><img id="Icon" href="/" src={Icon} alt="groceryIcon"/> Grocery App </NavLink>
+                <NavLink href="/" ><img id="Icon" src={Icon} alt="groceryIcon"/> Grocery App </NavLink>
     
                 <NavLink href="/contact">Contact</NavLink>
 
