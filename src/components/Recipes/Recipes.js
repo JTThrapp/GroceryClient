@@ -50,7 +50,7 @@ const Recipes = (props) => {
     <div id="recipes">
       <h3>Search Recipes</h3>
       <form onSubmit={getSearch} className="search-form">
-      <TextField id="standard-basic" variant="filled" className="search-bar" type="text" value={search} onChange={updateSearch} />
+      <TextField id="standard-basic" label="Search..." variant="filled" className="search-bar" type="text" value={search} onChange={updateSearch} />
       <button className="search-button" type="submit"><SearchIcon/></button>
     </form>
     {recipes.map(recipe => (
