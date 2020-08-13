@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .search-form {
@@ -11,5 +12,9 @@
 
 .search-bar {
   width: 30%;
+}
+
+#root > div > div:nth-child(3) {
+  background-color: #7cad3e;
 }
 
