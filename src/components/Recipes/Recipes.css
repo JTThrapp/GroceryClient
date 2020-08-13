@@ -7,6 +7,10 @@
   text-align: left;
 }
 
+.search-bar {
+  background-color: white;
+}
+
 .search-button {
   height: 56px
 }
