@@ -6,35 +6,31 @@ import Recipes from './components/Recipes/Recipes';
 import OurNav from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Footer from './components/Footer/Footer';
 
 
 
 function App() {
 
-  const [sessionToken, setSessionToken] = useState(undefined);
-  
-  
-  sessionToken === undefined ? console.log('No user signed in.') : console.log(`Your session token is: ${sessionToken}`) ;
+  let ls = localStorage.getItem('token');
 
-  console.log(`local storage: ${localStorage.getItem('token')}`)
+  if (ls !== null ) {
+    ls = localStorage.getItem('token').toString();
+  }
+  const [sessionToken, setSessionToken] = useState(ls);
 
-  let ls = localStorage.getItem('token')
-
-  const viewConductor = () => {
-    return sessionToken !== undefined ?
-  
-        <div>
-          <Sidebar token={sessionToken}/>
-          <Recipes />
-          <Footer />
-        </div>
-       
-      
+  const displayLogin = () => {
+    return ls !== null ?
+        <div> </div>
       : <Auth updateToken={updateToken}/>
   }
-
-
+  const displayRecipes = () => {
+    return ls !== null ?
+        <div>
+          <Sidebar token={sessionToken}/>
+          <Recipes />          
+        </div>
+      : null;
+  }
 
   const updateToken = newToken => {
     localStorage.setItem('token', newToken);
@@ -51,10 +47,11 @@ function App() {
   return(
     <div className="App">
       <OurNav token={sessionToken} clearToken={clearToken}/>
-        {viewConductor()}
+        {displayLogin()}
         <Router>
           <Switch>
           <Route path="/contact" component={Contact}></Route>
+          <Route path="/">{displayRecipes}</Route>
           {/* <Route path="/contact" render={MyContactPage}></Route> */}
           </Switch>
         </Router>

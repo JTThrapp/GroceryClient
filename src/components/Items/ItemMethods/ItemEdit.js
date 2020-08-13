@@ -29,7 +29,9 @@ const ItemEdit = (props) => {
         }
       );
       console.log(response);
-      //window.location = "/";
+
+      window.location = "/";
+
     } catch (err) {
       console.error(err.message);
     }

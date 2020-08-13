@@ -19,7 +19,9 @@ const Item = (props) => {
           Authorization: props.token,
         },
       });
-      // setItems(props.item.filter(item => item.id !== id));
+
+      window.location="/";
+      
       console.log(props.item);
     } catch (err) {
       console.error(err.message);
